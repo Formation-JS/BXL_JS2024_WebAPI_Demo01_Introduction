@@ -1,0 +1,22 @@
+{
+  "name": "webapi-01-intro",
+  "version": "0.1.0",
+  "description": "Inroduction au WebAPI",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env app.js",
+    "dev": "node --env-file=.env --watch app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "WebAPI",
+    "DigitalCity"
+  ],
+  "author": "Aurélien St",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.0.1",
+    "morgan": "^1.10.0"
+  }
+}
