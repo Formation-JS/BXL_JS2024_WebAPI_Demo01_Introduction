@@ -25,3 +25,25 @@ _Même fonctionnement que le **GET** sans obtenir les données_
 
 - **OPTIONS** \
 Decrire les verbes supporté par la route
+
+## Fonctionalité disponibles
+
+### Obtenir la liste des fleurs
+Route : */api/fleur*  
+Methode : GET
+
+### Obtenir les informations pour une fleur (via son id)
+Route : */api/fleur/{id}*  
+Methode : GET, HEAD
+
+### Ajouter une nouvelle fleur
+Route : */api/fleur*  
+Methode : POST
+
+### Modifier une fleur
+Route : */api/fleur/{id}*  
+Methode : PUT
+
+### Supprimer une fleur
+Route : */api/fleur/{id}*  
+Methode : DELETE
