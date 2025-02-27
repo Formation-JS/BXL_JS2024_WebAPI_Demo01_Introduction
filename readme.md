@@ -74,4 +74,6 @@ Reponse
 ```
 Route : */api/fleur/{id}*  
 Methode : DELETE
+Reponse  
+ - Code: 204
 ```

@@ -9,14 +9,14 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     getAll: async (req, res) => {
-        
+
         // Récup des données
         const flowers = flowerModel.find();
 
         // Mapping => Data Transfert Object
         const flowersDTO = flowers.map((flower) => ({
             id: flower.id,
-            name: flower.commonName ?? flower.name, 
+            name: flower.commonName ?? flower.name,
             url: `/api/flower/${flower.id}`
         }));
 
@@ -32,7 +32,7 @@ const flowerController = {
     getById: async (req, res) => {
         // Extraction du parametre « id »
         const id = parseInt(req.params.id);
-        
+
         // Récup des données
         const flower = flowerModel.findById(id);
 
@@ -78,7 +78,7 @@ const flowerController = {
         res.location(`/api/flower/${newFlower.id}`);
         res.status(201).json(newFlower);
     },
-    
+
     /**
      * Modifier une fleur
      * @param {express.Request} req La requête
@@ -109,7 +109,10 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     delete: async (req, res) => {
-        res.sendStatus(501);
+        const id = parseInt(req.params.id);
+        flowerModel.remove(id);
+
+        res.sendStatus(204);
     }
 
 };
