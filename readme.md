@@ -47,6 +47,9 @@ Reponse
 ```
 Route : */api/fleur/{id}*  
 Methode : HEAD
+Reponse  
+ - Code: 204
+ - Code: 404
 ```
 
 ### Ajouter une nouvelle fleur

@@ -52,7 +52,13 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     checkExists: async (req, res) => {
-        res.sendStatus(501);
+        const flower = parseInt(req.params.id);
+
+        if (!flowerModel.findById(flower)) {
+            res.sendStatus(404);
+            return;
+        }
+        res.sendStatus(204);
     },
 
     /**
