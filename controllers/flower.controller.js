@@ -1,4 +1,5 @@
 import express from 'express';
+import flowerModel from '../models/flower.model.js';
 
 const flowerController = {
 
@@ -8,7 +9,19 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     getAll: async (req, res) => {
-        res.sendStatus(501);
+
+        // Récup des données
+        const flowers = flowerModel.find();
+
+        // Mapping => Data Transfert Object
+        const flowersDTO = flowers.map((flower) => ({
+            id: flower.id,
+            name: flower.commonName ?? flower.name, 
+            url: `/api/flower/${flower.id}`
+        }));
+
+        // Reponse au format JSON
+        res.status(200).json(flowersDTO);
     },
 
     /**

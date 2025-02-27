@@ -29,21 +29,36 @@ Decrire les verbes supporté par la route
 ## Fonctionalité disponibles
 
 ### Obtenir la liste des fleurs
-Route : */api/fleur*  
+```
+Route : */api/fleur*
 Methode : GET
+Reponse  
+ - Code: 200 / Data: Tableau
+```
 
 ### Obtenir les informations pour une fleur (via son id)
+```
 Route : */api/fleur/{id}*  
-Methode : GET, HEAD
+Methode : GET
+```
+```
+Route : */api/fleur/{id}*  
+Methode : HEAD
+```
 
 ### Ajouter une nouvelle fleur
+```
 Route : */api/fleur*  
 Methode : POST
+```
 
 ### Modifier une fleur
+```
 Route : */api/fleur/{id}*  
 Methode : PUT
-
+```
 ### Supprimer une fleur
+```
 Route : */api/fleur/{id}*  
 Methode : DELETE
+```
