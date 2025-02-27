@@ -18,5 +18,14 @@
   "dependencies": {
     "express": "^5.0.1",
     "morgan": "^1.10.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Formation-JS/BXL_JS2024_WebAPI_Demo01_Introduction.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Formation-JS/BXL_JS2024_WebAPI_Demo01_Introduction/issues"
+  },
+  "homepage": "https://github.com/Formation-JS/BXL_JS2024_WebAPI_Demo01_Introduction#readme"
 }
