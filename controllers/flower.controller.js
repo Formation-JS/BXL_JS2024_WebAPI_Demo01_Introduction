@@ -85,7 +85,22 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     update: async (req, res) => {
-        res.sendStatus(501);
+        const flowerId = parseInt(req.params.id);
+        const flower = req.body;
+
+        if (!flowerModel.findById(flower)) {
+            res.sendStatus(404);
+            return;
+        }
+
+        if (!flower || !flower.name || !flower.origins || !flower.family || flower.toxicity === undefined) {
+            res.status(400).json({ error: 'Les données sont invalides' });
+            return
+        }
+
+        flowerModel.modify(flowerId, flower);
+
+        res.sendStatus(204);
     },
 
     /**

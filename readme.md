@@ -65,6 +65,10 @@ Reponse
 ```
 Route : */api/fleur/{id}*  
 Methode : PUT
+Reponse  
+ - Code: 202 ou 200
+ - Code: 400 ou 422
+ - Code: 404
 ```
 ### Supprimer une fleur
 ```
