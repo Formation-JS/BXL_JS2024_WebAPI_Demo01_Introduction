@@ -9,7 +9,7 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     getAll: async (req, res) => {
-
+        
         // Récup des données
         const flowers = flowerModel.find();
 
@@ -30,7 +30,20 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     getById: async (req, res) => {
-        res.sendStatus(501);
+        // Extraction du parametre « id »
+        const id = parseInt(req.params.id);
+        
+        // Récup des données
+        const flower = flowerModel.findById(id);
+
+        // Reponse 404 si aucune donnée trouvé
+        if (!flower) {
+            res.sendStatus(404);
+            return;
+        }
+
+        // Reponse au format JSON
+        res.status(200).json(flower);
     },
 
     /**

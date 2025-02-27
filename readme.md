@@ -40,6 +40,9 @@ Reponse
 ```
 Route : */api/fleur/{id}*  
 Methode : GET
+Reponse  
+ - Code: 200 / Data: Objet
+ - Code: 404
 ```
 ```
 Route : */api/fleur/{id}*  
