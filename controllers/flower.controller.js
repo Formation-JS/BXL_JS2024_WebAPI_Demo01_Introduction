@@ -67,7 +67,16 @@ const flowerController = {
      * @param {express.Response} res La réponse
      */
     add: async (req, res) => {
-        res.sendStatus(501);
+        const flower = req.body;
+        if (!flower || !flower.name || !flower.origins || !flower.family || flower.toxicity === undefined) {
+            res.status(400).json({ error: 'Les données sont invalides' });
+            return
+        }
+
+        const newFlower = flowerModel.insert(flower);
+
+        res.location(`/api/flower/${newFlower.id}`);
+        res.status(201).json(newFlower);
     },
     
     /**

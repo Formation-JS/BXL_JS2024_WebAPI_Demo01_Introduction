@@ -56,6 +56,9 @@ Reponse
 ```
 Route : */api/fleur*  
 Methode : POST
+Reponse  
+ - Code: 204 / Data: Objet / Location
+ - Code: 400 ou 422
 ```
 
 ### Modifier une fleur
